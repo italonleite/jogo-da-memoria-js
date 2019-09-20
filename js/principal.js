@@ -1,14 +1,45 @@
 
 function alterarNivel() { 
     var nivel = document.querySelector("#nivel").value;
-    BuscarImagens(nivel) 
+    BuscarImagens();
+    
+    
+}
+
+
+function BuscarImagens() { 
+  
+    if (nivel.value == "facil") { 
+        var resultado = [];
+        for (var i = 0; i < 3; i++) { 
+           resultado.push(imagensDiretorio[i]);
+
+        }
+        console.log(resultado)
+        
+    }
+    else if (nivel.value == "medio") { 
+        var resultado = [];
+        for (var i = 0; i < 6; i++) { 
+            resultado.push(imagensDiretorio[i]);
+        }
+        console.log(resultado)
+    }
+    else if (nivel.value == "dificil") { 
+        var resultado = [];
+        for (var i = 0; i < 9; i++) { 
+            resultado.push(imagensDiretorio[i]);
+        }
+        console.log(resultado)
+    }
+    
 }
 
 
 var imagensDiretorio = [
     {
         id: 1,
-		nome: 'basebal',
+		valor: 'basebal',
         titulo: 'basebal',     
     },
     {
@@ -42,29 +73,22 @@ var imagensDiretorio = [
         titulo: 'bola',       
     },
     {
-        id: 7,
+        id: 8,
+		valor: 'bola', 
+        titulo: 'bola',       
+    },
+    {
+        id:9,
+		valor: 'bola', 
+        titulo: 'bola',       
+    },
+    {
+        id: 10,
 		valor: 'bola', 
         titulo: 'bola',       
     },
     
 ]
-
-
-function BuscarImagens() { 
-    if (nivel.value == "facil") { 
-        for (var i = 0; i < 3; i++) { 
-            console.log(imagensDiretorio[i]);
-            
-        }
-        
-    }
-    else if (nivel.value == "medio") { 
-        for (var i = 0; i < 6; i++) { 
-            console.log(imagensDiretorio[i]);
-        }
-    }
-    
-}
 
 
 
