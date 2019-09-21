@@ -1,96 +1,87 @@
-
-function alterarNivel() { 
+function alterarNivel() {
     var nivel = document.querySelector("#nivel").value;
-    BuscarImagens();
-    
-    
+    var resultado = BuscarImagens(nivel);
+    console.log(resultado);
 }
 
+function BuscarImagens(nivel) {
+var resultado = [];
+var tamanho = 0;
 
-function BuscarImagens() { 
-  
-    if (nivel.value == "facil") { 
-        var resultado = [];
-        for (var i = 0; i < 3; i++) { 
-           resultado.push(imagensDiretorio[i]);
+switch (nivel)
+{
+case "facil":
+tamanho = 3;
+break;
 
-        }
-        console.log(resultado)
-        
-    }
-    else if (nivel.value == "medio") { 
-        var resultado = [];
-        for (var i = 0; i < 6; i++) { 
-            resultado.push(imagensDiretorio[i]);
-        }
-        console.log(resultado)
-    }
-    else if (nivel.value == "dificil") { 
-        var resultado = [];
-        for (var i = 0; i < 9; i++) { 
-            resultado.push(imagensDiretorio[i]);
-        }
-        console.log(resultado)
-    }
-    
+case "medio":
+tamanho = 6;
+break;
+
+case "dificil":
+tamanho = 9;
+break;
+}
+
+for (var i = 0; i < tamanho; i++) {
+  resultado.push(imagensDiretorio[i]);
+}
+
+return resultado;
 }
 
 
 var imagensDiretorio = [
     {
         id: 1,
-		valor: 'basebal',
-        titulo: 'basebal',     
+valor: 'basebal',
+        titulo: 'basebal',    
     },
     {
         id: 2,
-		valor: 'surfista',
+valor: 'surfista',
         titulo: 'surfista',    
     },
     {
         id: 3,
-		valor: 'ciclista',
+valor: 'ciclista',
         titulo: 'ciclista',        
     },
     {
         id: 4,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
     {
         id: 5,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
     {
         id: 6,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
     {
         id: 7,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
     {
         id: 8,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
     {
         id:9,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
     {
         id: 10,
-		valor: 'bola', 
-        titulo: 'bola',       
+valor: 'bola',
+        titulo: 'bola',      
     },
-    
+   
 ]
-
-
-
-
 
