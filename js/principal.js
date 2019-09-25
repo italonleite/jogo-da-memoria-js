@@ -1,13 +1,20 @@
 function alterarNivel() {
     var nivel = document.querySelector("#nivel").value;
     var resultado = BuscarImagens(nivel);
-    console.log(resultado);
+     CriarPares(resultado)
+  
 }
 
-function BuscarImagens(nivel) {
-var resultado = [];
-var tamanho = 0;
+function CriarPares(resultado){ 
+    const cloneResultado = [...resultado];
+    console.log("resultado", resultado);
+    console.log("clone", cloneResultado);
+}
 
+
+function BuscarImagens(nivel) {
+    var resultado = [];
+    var tamanho = 0;
 switch (nivel)
 {
 case "facil":
