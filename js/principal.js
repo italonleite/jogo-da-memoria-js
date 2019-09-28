@@ -1,29 +1,33 @@
-function alterarNivel() {
+
+function alterarNivel(nivel) {
+    var ul = document.querySelector("#imagem");
+    ul.innerHTML = "";
     var nivel = document.querySelector("#nivel").value;
-    var resultado = BuscarImagens(nivel);
-    CriarPares(resultado);
+    var listaImagens = BuscarImagens(nivel);
+    CriarPares(listaImagens);
+
 
 }
 
-function CriarPares(resultado) {
-    var cloneResultado = [...resultado];
+function CriarPares(listaImagens) {
+    var cloneResultado = [...listaImagens];
     var ul = document.querySelector("#imagem");
-    for (var i = 0; i < resultado.length; i++) {
+    for (var i = 0; i < listaImagens.length; i++) {
         var li = document.createElement("li");
-        li.textContent = resultado[i].titulo;
+        li.textContent = listaImagens[i].titulo;
         ul.appendChild(li);
-
     }
 
     for (var i = 0; i < cloneResultado.length; i++) {
         var li = document.createElement("li");
-        li.textContent = resultado[i].titulo;
+        li.textContent = listaImagens[i].titulo;
         ul.appendChild(li);
     }
+
 }
 
 function BuscarImagens(nivel) {
-    var resultado = [];
+    var listaImagens = [];
     var tamanho = 0;
     switch (nivel) {
         case "facil":
@@ -40,10 +44,10 @@ function BuscarImagens(nivel) {
     }
 
     for (var i = 0; i < tamanho; i++) {
-        resultado.push(imagensDiretorio[i]);
+        listaImagens.push(imagensDiretorio[i]);
     }
 
-    return resultado;
+    return listaImagens;
 }
 
 
