@@ -10,7 +10,7 @@ function alterarNivel() {
 }
 
 function CriarPares(listaImagens) {
-    var cloneResultado = [...listaImagens];
+    var cloneListaImagens = [...listaImagens];
     var ul = document.querySelector("#imagem");
     for (var i = 0; i < listaImagens.length; i++) {
         var li = document.createElement("li");
@@ -18,7 +18,7 @@ function CriarPares(listaImagens) {
         ul.appendChild(li);
     }
 
-    for (var i = 0; i < cloneResultado.length; i++) {
+    for (var i = 0; i < cloneListaImagens.length; i++) {
         var li = document.createElement("li");
         li.textContent = listaImagens[i].titulo;
         ul.appendChild(li);
