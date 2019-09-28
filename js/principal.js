@@ -1,5 +1,5 @@
 
-function alterarNivel(nivel) {
+function alterarNivel() {
     var ul = document.querySelector("#imagem");
     ul.innerHTML = "";
     var nivel = document.querySelector("#nivel").value;
