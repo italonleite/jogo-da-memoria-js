@@ -10,25 +10,24 @@
 
     </head>
 
-    <body onload="inicio()">
+    <body>
 
         <h1 style="text-align: center;">Jogo da Memória</h1><br>
-        <select id="nivel"  onchange="alterarNivel()">
+        <select id="nivel" onchange="alterarNivel()">
             <option value="selecione">Selecione</option>
             <option value="facil">Facil</option>
             <option value="medio">Medio</option>
             <option value="dificil">Difícil</option>
         </select>
-        <ul id="imagem" style="text-align: center">
 
-        </ul>
-        <br>
-        <!-- <div class="scene">
+
+
+        <div class="scene">
             <div class="card">
-                <div class="card__face front">front</div>
-                <div class="card__face back">back</div>
-            </div>
-        </div>-->
+                <div class="card__face front"></div>
+                <div class="card__face back"></div>
+            </div>            
+        </div>
 
 
         <script src="js/principal.js"></script>

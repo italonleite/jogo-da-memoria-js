@@ -1,27 +1,38 @@
 
 function alterarNivel() {
-    var ul = document.querySelector("#imagem");
-    ul.innerHTML = "";
+    limparListaImagens();
     var nivel = document.querySelector("#nivel").value;
     var listaImagens = BuscarImagens(nivel);
     CriarPares(listaImagens);
 
 
 }
+function limparListaImagens() {
+    var div = document.querySelector(".back");
+    div.innerHTML = "";
+}
 
 function CriarPares(listaImagens) {
     var cloneListaImagens = [...listaImagens];
-    var ul = document.querySelector("#imagem");
+  
+    //Montar Cards Lista de Imagens
     for (var i = 0; i < listaImagens.length; i++) {
-        var li = document.createElement("li");
-        li.textContent = listaImagens[i].titulo;
-        ul.appendChild(li);
+        var img = document.createElement("img");
+        var p = document.createElement("p");        
+        img.src = 'images/' + listaImagens[i].id + '.jpg';
+        p.textContent = listaImagens[i].titulo;        
+        document.querySelector(".back").appendChild(img);
+        document.querySelector(".back").appendChild(p);
+         
     }
-
+     //Montar Cards clineListaImagens
     for (var i = 0; i < cloneListaImagens.length; i++) {
-        var li = document.createElement("li");
-        li.textContent = listaImagens[i].titulo;
-        ul.appendChild(li);
+        var img = document.createElement("img");
+        var p = document.createElement("p");
+        img.src = 'images/' + cloneListaImagens[i].id + '.jpg';
+        p.textContent = cloneListaImagens[i].titulo;
+        document.querySelector(".back").appendChild(img);
+        document.querySelector(".back").appendChild(p);
     }
 
 }
@@ -69,13 +80,13 @@ var imagensDiretorio = [
     },
     {
         id: 4,
-        valor: 'bola',
-        titulo: 'bola',
+        valor: 'motocross',
+        titulo: 'motocross',
     },
     {
         id: 5,
-        valor: 'papel',
-        titulo: 'papel',
+        valor: 'nadador',
+        titulo: 'nadador',
     },
     {
         id: 6,
@@ -106,9 +117,9 @@ var imagensDiretorio = [
 ]
 
 
-/*var card = document.querySelector('.card');
+var card = document.querySelector('.card');
 card.addEventListener('click', function () {
-    card.classList.toggle('is-flipped');
-});*/
+   card.classList.toggle('is-flipped');
+});
 
 
